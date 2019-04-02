@@ -34,16 +34,11 @@ export class PokemonsComponent implements OnInit {
     this.pokemons = this.pokeOverview;
   }
   applyFilter() {
-    const self = this;
     if (this.filter !== "") {
-      this.pokemons = this.pokeOverview.filter(function(
-        element,
-        index,
-        array
-      ) {
-        return element.name.startsWith(self.filter);
+      this.pokemons = this.pokeOverview.filter(element => {
+        return element.name.startsWith(this.filter);
       });
-    }else{
+    } else {
       this.pokemons = this.pokeOverview;
     }
   }

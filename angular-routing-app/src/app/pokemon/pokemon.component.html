@@ -1,8 +1,7 @@
 <div *ngIf="pokemon">
-  <h1>{{pokemon.name}}</h1>
+  <h1>{{ pokemon.name }}</h1>
   <h2>Abilities</h2>
   <p *ngFor="let ability of pokemon.abilities">
-   {{ability.ability.name}}
+    {{ ability.ability.name }}
   </p>
-
 </div>

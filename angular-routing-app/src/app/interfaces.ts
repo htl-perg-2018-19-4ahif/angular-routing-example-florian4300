@@ -6,14 +6,14 @@ export interface IPokemons {
   pokemons: IPokemon[];
 }
 export interface IResponsePokeList {
-    results: IPokemonOverview[];
+  results: IPokemonOverview[];
 }
 
 export interface IPokemon {
-    name: string;
-    abilities: Ability[]
+  name: string;
+  abilities: Ability[];
 }
-export interface Ability{
-    name: string;
-    url: string;
+export interface Ability {
+  name: string;
+  url: string;
 }

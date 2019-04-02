@@ -1,11 +1,20 @@
-Filter: <input type="text" name="lname" [(ngModel)]="filter" (change)="applyFilter()"><br>
+Filter:
+<input
+  type="text"
+  name="lname"
+  [(ngModel)]="filter"
+  (change)="applyFilter()"
+/><br />
 <button (click)="applyFilter()">filter</button>
 
-
-
-<ng-container *ngIf="pokeOverview"> 
-  <div *ngFor="let pokemon of pokemons let i=index" >
-    <a routerLink="/pokemons/pokemon/{{i+1}}" href="{{ pokemon.url }}" id="{{i}}">{{ pokemon.name }}</a>
+<ng-container *ngIf="pokeOverview">
+  <div *ngFor="let pokemon of pokemons; let i = index">
+    <a
+      routerLink="/pokemons/{{ i + 1 }}"
+      href="{{ pokemon.url }}"
+      id="{{ i }}"
+      >{{ pokemon.name }}</a
+    >
     <br />
   </div>
 </ng-container>

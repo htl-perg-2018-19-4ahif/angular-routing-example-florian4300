@@ -12,18 +12,18 @@ export class PokemonComponent implements OnInit {
   pokemon: IPokemon;
   id: number;
 
-
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.fetchPokemon();
   }
-  async fetchPokemon(){
+  async fetchPokemon() {
     this.route.params.subscribe(params => {
-      this.id = +params["id"];
+      this.id = +params.id;
     });
-    const pokemonResponse = await this.http.get<IPokemon>('https://pokeapi.co/api/v2/pokemon/'+this.id+"/").toPromise();
+    const pokemonResponse = await this.http
+      .get<IPokemon>("https://pokeapi.co/api/v2/pokemon/" + this.id + "/")
+      .toPromise();
     this.pokemon = pokemonResponse;
   }
-
 }
